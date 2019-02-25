@@ -25,8 +25,8 @@ class CreatePaymentsTable extends Migration
             $table->timestamps();
 
             /*Foreign key naar account numbers*/
-            $table->unsignedInteger('account_number_id');
-            $table->foreign('account_number_id')->references('id')->on('account__numbers');
+            $table->unsignedInteger('account_Number_id');
+            $table->foreign('account_Number_id')->references('id')->on('account_numbers');
 
         });
     }

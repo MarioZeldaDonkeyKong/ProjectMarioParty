@@ -13,7 +13,7 @@ class CreateAccountNumbersTable extends Migration
      */
     public function up()
     {
-        Schema::create('account__numbers', function (Blueprint $table) {
+        Schema::create('account_numbers', function (Blueprint $table) {
             $table->increments('id');
             $table->string('account_number');
             $table->timestamps();
@@ -32,6 +32,6 @@ class CreateAccountNumbersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('account__numbers');
+        Schema::dropIfExists('account_numbers');
     }
 }
