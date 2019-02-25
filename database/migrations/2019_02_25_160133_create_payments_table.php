@@ -23,6 +23,11 @@ class CreatePaymentsTable extends Migration
             $table->string('note');
             $table->string('imageUrl');
             $table->timestamps();
+
+            /*Foreign key naar account numbers*/
+            $table->unsignedInteger('account_number_id');
+            $table->foreign('account_number_id')->references('id')->on('account__numbers');
+
         });
     }
 
