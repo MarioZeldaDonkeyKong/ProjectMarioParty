@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('home');
 });
+
+//Route::get('/pay', function () {
+//    return view('pay');
+//});
+
+Route::get('/pay', "MollieController@doPayment");

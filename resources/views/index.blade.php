@@ -7,8 +7,11 @@
     <title>Poespasbank - {{$title}} </title>
 </head>
 <body>
+{{--Header maken voor standaard--}}
+
 <div class="container">
 @yield ('content')
 </div>
+{{--Footer maken voor elke pagina--}}
 </body>
 </html>
