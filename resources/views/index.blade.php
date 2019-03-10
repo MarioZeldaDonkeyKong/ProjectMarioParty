@@ -1,17 +1,25 @@
 <!doctype html>
 
 <html>
+
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Poespasbank - {{$title}} </title>
+
+    <title>@yield('title', 'Laracasts')</title>
+
 </head>
+
 <body>
 {{--Header maken voor standaard--}}
 
-<div class="container">
 @yield ('content')
-</div>
+
 {{--Footer maken voor elke pagina--}}
+<ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/contact">Contact</a> us to learn more.</li>
+    <li><a href="/payRequest">Pay Request</a></li>
+</ul>
+
 </body>
+
 </html>

@@ -1,5 +1,9 @@
-@include('index', array('title'=>'payRequest'))
+@extends('index')
+
+@section('title', 'Pay Request')
+
 @section('content')
+
 <form method="post" action="/pay">
     @csrf
     Currency:<br>
@@ -18,3 +22,4 @@
     Test
 </form>
 
+@endsection
