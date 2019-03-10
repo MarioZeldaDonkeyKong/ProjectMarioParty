@@ -15,8 +15,6 @@ Route::get('/', function () {
     return view('home');
 });
 
-//Route::get('/pay', function () {
-//    return view('pay');
-//});
+Route::post('/pay', 'PaymentController@pay');
 
-Route::get('/pay', "MollieController@doPayment");
+Route::get('/payRequest', 'PaymentController@payRequest');
