@@ -2,7 +2,6 @@
 
 @section('title', 'Create')
 
-
 @section('content')
 
     <form method="POST" action="/payment">

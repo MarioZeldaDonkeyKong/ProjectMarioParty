@@ -10,6 +10,7 @@
 
 <body>
 {{--Header maken voor standaard--}}
+The real index
 
 @yield ('content')
 
@@ -17,9 +18,8 @@
 <ul>
     <li><a href="/">Home</a></li>
     <li><a href="/contact">Contact</a> us to learn more.</li>
-    <li><a href="/payRequest">Pay Request</a></li>
-    <li><a href="/create">Create</a></li>
-
+    <li><a href="/payments/payRequest">Pay Request</a></li>
+    <li><a href="/payments/create">Create</a></li>
 </ul>
 
 </body>

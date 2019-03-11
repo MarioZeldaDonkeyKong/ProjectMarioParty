@@ -1,5 +1,17 @@
 <?php
 
+/*
+    Conventions:
+    GET     /projects (index)
+    GET     /projects/create (create)
+    GET     /projects/1 (show)
+    POST    /projects (store)
+    GET     /projects/1/edit (edit)
+    PATCH   /projects/1 (update)
+    DELETE  /projects/1 (destroy)
+*/
+
+
 Route::get('/', 'PagesController@home');
 
 Route::get('/contact', 'PagesController@contact');
@@ -8,13 +20,10 @@ Route::get('/create', function() {
    return view('create');
 });
 
-Route::get('/payment', 'PaymentController@index');
 
-Route::get('/payRequest', 'PaymentController@payRequest');
+Route::resource('payments', 'PaymentsController');
 
-Route::post('/pay', 'PaymentController@pay');
+// The issues lies with conventions
+// Route::get('/payments/payRequest', 'PaymentsController@payRequest');
 
-Route::post('/payment', 'PaymentController@store'); // Storing a new resource
-
-
-// Projects Controller, Tasks Controller, Users Controller
+//Route::post('/pay', 'PaymentsController@pay');
