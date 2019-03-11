@@ -165,6 +165,7 @@ return [
         /*
          * Package Service Providers...
          */
+        Auth0\Login\LoginServiceProvider::class,
 
         /*
          * Application Service Providers...
