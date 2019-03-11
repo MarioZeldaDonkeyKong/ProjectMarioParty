@@ -18,6 +18,8 @@
     <li><a href="/">Home</a></li>
     <li><a href="/contact">Contact</a> us to learn more.</li>
     <li><a href="/payRequest">Pay Request</a></li>
+    <li><a href="/create">Create</a></li>
+
 </ul>
 
 </body>
