@@ -22,22 +22,6 @@ class PaymentsController extends Controller {
         return view('payments.create');
     }
 
-    public function show() {
-
-    }
-
-    public function edit() {
-
-    }
-
-    public function update() {
-
-    }
-
-    public function destroy() {
-
-    }
-
     public function store() {
 
         $payment = new Payment();

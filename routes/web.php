@@ -20,10 +20,12 @@ Route::get('/create', function() {
    return view('create');
 });
 
-
-Route::resource('payments', 'PaymentsController');
-
 // The issues lies with conventions
-// Route::get('/payments/payRequest', 'PaymentsController@payRequest');
+//Route::resource('payments', 'PaymentsController');
 
-//Route::post('/pay', 'PaymentsController@pay');
+Route::get('/payments/', 'PaymentsController@index');
+
+Route::get('/payments/create', 'PaymentsController@create');
+
+Route::get('/payments/payRequest', 'PaymentsController@payRequest');
+Route::post('/pay', 'PaymentsController@pay');
