@@ -23,8 +23,9 @@ Route::get('/create', function() {
 // The issues lies with conventions
 // Route::resource('payments', 'PaymentsController');
 
-Route::get('/payments/', 'PaymentsController@index');
+Route::get('/payments', 'PaymentsController@index');
 Route::get('/payments/create', 'PaymentsController@create');
+Route::post('/payments/store', 'PaymentsController@storePayment');
 
 Route::get('/payments/payRequest', 'PaymentsController@payRequest');
 Route::post('/pay', 'PaymentsController@pay');

@@ -7,10 +7,11 @@ use App\Http\Controllers\Mollie\Wrappers\MollieApiWrapper;
 use App\Payment;
 
 class PaymentsController extends Controller {
+    private $mollie;
 
-    public function PayRequest(){
-        echo 'Debug';
-        return view("payments.payRequest");
+    public function __construct()
+    {
+        $this->mollie = new MollieApiWrapper();
     }
 
     public function index() {
@@ -22,7 +23,7 @@ class PaymentsController extends Controller {
         return view('payments.create');
     }
 
-    public function store() {
+    public function storePayment() {
 
         $payment = new Payment();
 
@@ -37,23 +38,10 @@ class PaymentsController extends Controller {
 
         $payment->save();
 
-        return redirect('payment');
+        return redirect('/payments');
     }
 
-    public function Pay()
-    {
-        $amount = (string)$_POST['amount'];
-        $currency = $_POST['currency'];
-        $description = $_POST['description'];
-        $mollie = new MollieApiWrapper();
-        $payment = $mollie->payments()->create([
-            "amount" => [
-                "currency" => $currency,
-                "value" => $amount // 2 decimals
-            ],
-            "description" => $description,
-            "redirectUrl" => "https://www.google.com",
-            "webhookUrl" => "https://nl.wikipedia.org/wiki/Hoofdpagina"
-        ]);
+    public function payRequest(Payment $payment){
+        $this->mollie->payments();
     }
 }

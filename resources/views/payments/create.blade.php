@@ -4,7 +4,7 @@
 
 @section('content')
 
-    <form method="POST" action="/payment">
+    <form method="POST" action="/payments/store">
         {{csrf_field()}}
         <div>
             <input type="text" name="payment_name" placeholder="Payment Title">
