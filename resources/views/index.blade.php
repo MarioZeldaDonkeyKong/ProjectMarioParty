@@ -5,7 +5,7 @@
 <head>
 
     <title>@yield('title', 'Laracasts')</title>
-
+    @yield('helpers')
 </head>
 
 <body>
