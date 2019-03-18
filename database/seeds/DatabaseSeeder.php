@@ -24,19 +24,16 @@ class DatabaseSeeder extends Seeder
         DB::table('users')->insert([
             'name' => 'Aaron Slots',
             'email' => 'aaronslots@gmail.com',
-            'password' => 'aaron',
         ]);
 
         DB::table('users')->insert([
         'name' => 'Phi van Nguyen',
         'email' => 'vpnguyen@avans.com',
-        'password' => 'phiwachtwoord',
         ]);
 
         DB::table('users')->insert([
             'name' => 'Rik Meijers',
             'email' => 'rikmei@live.nl',
-            'password' => 'rikzijnwachtwoord',
         ]);
 
         DB::table('account_numbers')->insert([
