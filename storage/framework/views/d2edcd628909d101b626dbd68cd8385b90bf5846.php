@@ -5,6 +5,7 @@
 <head>
 
     <title><?php echo $__env->yieldContent('title', 'Laracasts'); ?></title>
+    <?php echo $__env->yieldContent('helpers'); ?>
 
 </head>
 
