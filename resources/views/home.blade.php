@@ -1,25 +1,23 @@
-@extends('index')
-
-@section('title', 'Home')
+@extends('layouts.app')
 
 @section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">Dashboard</div>
 
-    @if (Route::has('login'))
-        <div class="top-right links">
-            @auth
-                <a href="{{ route('logout') }}">Logout</a>
-            @else
-                <a href="{{ route('login') }}">Login/Signup</a>
-            @endauth
+                <div class="card-body">
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+
+                    You are logged in!
+                </div>
+            </div>
         </div>
-    @endif
-
-    <h1>This is a home page, {{ $foo }}</h1>
-
-<ul>
-    @foreach($tasks as $task)
-        <li>{{ $task }}</li>
-    @endforeach
-</ul>
-
+    </div>
+</div>
 @endsection

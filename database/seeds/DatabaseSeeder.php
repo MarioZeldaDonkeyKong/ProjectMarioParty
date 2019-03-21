@@ -24,19 +24,19 @@ class DatabaseSeeder extends Seeder
         DB::table('users')->insert([
             'name' => 'Aaron Slots',
             'email' => 'aaronslots@gmail.com',
-            'password' => 'aaron',
+            'password' => Hash::make('secret1'),
         ]);
 
         DB::table('users')->insert([
         'name' => 'Phi van Nguyen',
         'email' => 'vpnguyen@avans.com',
-        'password' => 'phiwachtwoord',
+        'password' => Hash::make('secret2'),
         ]);
 
         DB::table('users')->insert([
             'name' => 'Rik Meijers',
             'email' => 'rikmei@live.nl',
-            'password' => 'rikzijnwachtwoord',
+            'password' => Hash::make('secret3'),
         ]);
 
         DB::table('account_numbers')->insert([

@@ -162,10 +162,6 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
-        /*
-         * Package Service Providers...
-         */
-        Auth0\Login\LoginServiceProvider::class,
 
         /*
          * Application Service Providers...
