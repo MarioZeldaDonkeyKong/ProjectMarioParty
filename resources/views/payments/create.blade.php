@@ -3,17 +3,25 @@
 @section('title', 'Create')
 
 @section('helpers')
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script>
+        let today = new Date(),
+            day = today.getDate(),
+            month = today.getMonth()+1, //January is 0
+            year = today.getFullYear();
+        today.setDate(today + 1);
+        if(day<10){
+            day='0'+day
+        }
+        if(month<10){
+            month='0'+month
+        }
+        today = year+'-'+month+'-'+day;
 
-<script type="text/javascript">
-    $('#sandbox-container .input-group.date').datepicker({
-        startDate: "today"
-    });
-</script>
-
+        window.onload=function () {
+            const date = document.getElementById("date");
+            date.setAttribute("min", today)
+        }
+    </script>
 @section('content')
 
     <form method="POST" action="/payments/store">
@@ -62,13 +70,9 @@
                 <option>USD</option>
             </select>
         </div>
-
         <div>
-            <div class="input-group date">
-                <input type="text" class="form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
-            </div>
+            <input id="date" type="date" name="date" placeholder=today>
         </div>
-
         <div>
             <input type="text" name="note" placeholder="Notes">
         </div>
@@ -81,10 +85,5 @@
             <button type="submit">Create Payment</button>
         </div>
     </form>
-    <script type="text/javascript">
-        $(".form_datetime").datetimepicker({
-            format: "dd MM yyyy - hh:ii"
-        });
-    </script>
 @endsection
 
