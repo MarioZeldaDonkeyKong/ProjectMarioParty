@@ -5,6 +5,6 @@
   }
   &::-webkit-calendar-picker-indicator {
     opacity: 0;
-    min: 0;
+    min: today;
   }
 }
