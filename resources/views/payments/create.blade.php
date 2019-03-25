@@ -2,35 +2,14 @@
 
 @section('title', 'Create')
 
-@section('helpers')
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
-<script type="text/javascript">
-    $('#sandbox-container .input-group.date').datepicker({
-        startDate: "today"
-    });
-</script>
-
 @section('content')
 
     <form method="POST" action="/payments/store">
         {{csrf_field()}}
-        <div>
-            <input type="text" name="payment_name" placeholder="Payment Title">
-        </div>
-
-        <div>
-            <textarea name="description" placeholder="Payment Description"></textarea>
-        </div>
-
-        <div>
-            <input type="text" name="value" placeholder="Value">
-        </div>
-
-        <div>
+        <div class="form-group">
+            <input class="form-control" type="text" name="payment_name" placeholder="Payment Title" required>
+            <input type="text" class="form-control" name="description" placeholder="Payment Description" required>
+            <input class="form-control" type="text" name="value" placeholder="Value" required>
             <select class="form-control" name="currency" placeholder="EUR">
                 <option>EUR</option>
                 <option>AUD</option>
@@ -61,30 +40,11 @@
                 <option>TWD</option>
                 <option>USD</option>
             </select>
-        </div>
-
-        <div>
-            <div class="input-group date">
-                <input type="text" class="form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
-            </div>
-        </div>
-
-        <div>
-            <input type="text" name="note" placeholder="Notes">
-        </div>
-
-        <div>
-            <input type="text" name="imageUrl" placeholder="https://images.ctfassets.net/k4kk06v59kf0/5WfNYahm6s4W2aqOsUsM0y/93db1c43d56b2a073dae1faa44410619/og-image-mollie.png">
-        </div>
-
-        <div>
-            <button type="submit">Create Payment</button>
+            <input class="form-control" type="date" name="date" min="<?php echo date("Y-m-d")?>" value="<?php echo date("Y-m-d")?>" required>
+            <input class="form-control" type="text" name="note" placeholder="Notes" required>
+            <input class="form-control" type="text" name="imageUrl" placeholder="https://images.ctfassets.net/k4kk06v59kf0/5WfNYahm6s4W2aqOsUsM0y/93db1c43d56b2a073dae1faa44410619/og-image-mollie.png">
+            <button class="form-control" type="submit">Create Payment</button>
         </div>
     </form>
-    <script type="text/javascript">
-        $(".form_datetime").datetimepicker({
-            format: "dd MM yyyy - hh:ii"
-        });
-    </script>
 @endsection
 

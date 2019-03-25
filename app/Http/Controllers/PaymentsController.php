@@ -29,14 +29,25 @@ class PaymentsController extends Controller {
 
         $payment->payment_name = request('payment_name');
         $payment->description = request('description');
-        $payment->value = '10.00';
-        $payment->currency = 'EUR';
-        $payment->date = '2018-10-20';
-        $payment->note = 'A note';
-        $payment->imageUrl = 'www.google.nl';
+        $payment->value = request('value');
+        $payment->currency = request('currency');
+        $payment->date = request('date');
+        $payment->note = request('note');
+        $payment->imageUrl = request('imageUrl');
         $payment->account_Number_id = '1';
+        $payment->id=dechex(count(Payment::all()));
 
         $payment->save();
+        $this->mollie->payments()->create([
+            "amount" => [
+                "currency"=>$payment->currency,
+                "value"=>$payment->value
+            ],
+            "description" => $payment->description,
+            "metadata" => [
+                "order_id" => $payment->id
+            ]
+        ]);
 
         return redirect('/payments');
     }

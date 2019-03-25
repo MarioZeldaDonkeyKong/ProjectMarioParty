@@ -2,7 +2,6 @@
 
 @section('title', 'Payment')
 
-
 @section('content')
 
 Payment Page

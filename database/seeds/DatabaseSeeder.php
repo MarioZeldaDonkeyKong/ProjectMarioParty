@@ -50,6 +50,8 @@ class DatabaseSeeder extends Seeder
         ]);
 
         DB::table('payments')->insert([
+            'id' => 0,
+            'created_at' => today(),
             'payment_name' => 'Phi',
             'description' => 'eten',
             'value' => '3',
