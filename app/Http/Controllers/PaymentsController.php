@@ -38,7 +38,7 @@ class PaymentsController extends Controller {
 
         $payment->save();
 
-        return redirect('/payments');
+        return redirect('/');
     }
 
     public function payRequest(Payment $payment){

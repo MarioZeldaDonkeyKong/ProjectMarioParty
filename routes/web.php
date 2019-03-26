@@ -1,10 +1,7 @@
 <?php
 
-Route::get('/', 'PagesController@home');
+Route::get('/home', 'PagesController@dashboard');
 Route::get('/contact', 'PagesController@contact');
-Route::get('/create', function() {
-   return view('create');
-});
 
 Route::get('/payments/create', 'PaymentsController@create');
 Route::post('/payments/store', 'PaymentsController@storePayment');
@@ -14,4 +11,6 @@ Route::post('/pay', 'PaymentsController@pay');
 
 // Authentication
 Auth::routes();
-Route::get('/home', 'HomeController@index')->name('home');
+Route::resource('account_numbers','AccountNumbersController')->except('edit', 'update');
+
+Route::get('/', 'DashboardController@index');

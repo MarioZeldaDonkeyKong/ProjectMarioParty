@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\AccountNumber;
 use Illuminate\Http\Request;
 
-class AccountsController extends Controller
+class AccountNumbersController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class AccountsController extends Controller
      */
     public function index()
     {
-        //
+
     }
 
     /**
@@ -45,29 +45,6 @@ class AccountsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(AccountNumber $accountNumber)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\AccountNumber  $accountNumber
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(AccountNumber $accountNumber)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\AccountNumber  $accountNumber
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, AccountNumber $accountNumber)
     {
         //
     }

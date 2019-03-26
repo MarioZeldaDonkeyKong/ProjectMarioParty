@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 
-class HomeController extends Controller
+class DashboardController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -23,6 +24,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $user_id = auth()->user()->id;
+
+        $user = User::find($user_id);
+
+        //var_dump($user->accountNumbers()->get()[(0)]->account_number);
+        // zet ze bij verkeerde id
+
+        return view('dashboard')->with('account_numbers', $user->accountNumbers()->get());
     }
 }

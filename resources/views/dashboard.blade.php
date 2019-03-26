@@ -13,8 +13,17 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    You are logged in!
+                    <h3>Your Account Numbers</h3>
+                        <table class="table table-striped">
+                    <tr>
+                        <th>Company</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    @foreach($account_numbers as $account_number)
+                            <li>{{$account_number->account_number}}</li>
+                    @endforeach
+                        </table>
                 </div>
             </div>
         </div>
